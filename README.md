@@ -9,7 +9,7 @@
 由于数据库使用的是mongdb是3.4.5版本，且 mongodb 3.0以上支持用户自定义存储引擎,用户可配置使用mmapv1或者wiredTiger存储引擎，3.2版本以后默认的开启的是wiredTiger存储引擎,之前用的是mmapv1存储引擎。并且2个存储引擎生成的数据文件格式不兼容。也就是说mmapv1引擎生成的数据文件wiredTiger引擎读取不出来。所以,安装3.2之后版本的mongodb,用mongoVue是无法正常显示collectiosns。
 1. 下载项目文件，后在文件目录下安装依赖：npm install
 2. 数据库连接：
-  打开cmd->进入命令行输入services.msc调出服务找到mongodb然后双击关闭，再在命令行中进入Mongodb的安装目录，即     d:mongodb\bin目录下输入：ongod  --storageEngine mmapv1 --dbpath d:\mongodb\data1（自定义存储位置）
+  打开cmd->进入命令行输入services.msc调出服务找到mongodb然后双击关闭，再在命令行中进入Mongodb的安装目录，即     d:mongodb\bin目录下输入：congod  --storageEngine mmapv1 --dbpath d:\mongodb\data1（自定义存储位置）
   检测方法：重新打开控制台输入mongo回车后输入show dbs，若容量不是0.00GB则修改成功。
 3. 项目启动
     在git中找到项目文件，输入node server/bin/www  打开后台
